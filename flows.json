@@ -1,0 +1,644 @@
+[
+    {
+        "id": "4d72d61b369e4652",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3068aa4de844c529",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2ababbd0c7bf2d8e",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e08869a0a038f0a4",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "2c8fbdad8bef74e1",
+        "type": "ui_group",
+        "name": "Project",
+        "tab": "2ababbd0c7bf2d8e",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7bfbfb1e.26447c",
+        "type": "inject",
+        "z": "4d72d61b369e4652",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "delay",
+                "v": "500",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "17a7f96a.e182b7",
+                "7334a3aa4f6705a0"
+            ]
+        ]
+    },
+    {
+        "id": "17a7f96a.e182b7",
+        "type": "trigger",
+        "z": "4d72d61b369e4652",
+        "name": "resnd every msg.delay",
+        "op1": "",
+        "op2": "0",
+        "op1type": "pay",
+        "op2type": "str",
+        "duration": "-500",
+        "extend": false,
+        "overrideDelay": true,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 720,
+        "y": 300,
+        "wires": [
+            [
+                "1cfc2b42.71f955",
+                "f2d014e45a0bdd50"
+            ]
+        ]
+    },
+    {
+        "id": "e666349b.a270d",
+        "type": "inject",
+        "z": "4d72d61b369e4652",
+        "name": "reset",
+        "props": [
+            {
+                "p": "reset",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 450,
+        "y": 380,
+        "wires": [
+            [
+                "17a7f96a.e182b7"
+            ]
+        ]
+    },
+    {
+        "id": "1cfc2b42.71f955",
+        "type": "debug",
+        "z": "4d72d61b369e4652",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "11202c44b13beaef",
+        "type": "csv",
+        "z": "4d72d61b369e4652",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\r",
+        "temp": "label",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1150,
+        "y": 300,
+        "wires": [
+            [
+                "826122178f5b4758"
+            ]
+        ]
+    },
+    {
+        "id": "826122178f5b4758",
+        "type": "file",
+        "z": "4d72d61b369e4652",
+        "name": "",
+        "filename": "/Users/massimilianoarca/Documents/5th Year/2nd Semester/Internet Of Things/Project/IoT-WI-project/Labels_Skype.csv",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 890,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41a780b775f7e9cb",
+        "type": "inject",
+        "z": "4d72d61b369e4652",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "delay",
+                "v": "500",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "str",
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "17a7f96a.e182b7",
+                "7334a3aa4f6705a0"
+            ]
+        ]
+    },
+    {
+        "id": "7334a3aa4f6705a0",
+        "type": "ui_chart",
+        "z": "4d72d61b369e4652",
+        "name": "",
+        "group": "2c8fbdad8bef74e1",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Label Creation",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "mm:ss",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 740,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2d014e45a0bdd50",
+        "type": "function",
+        "z": "4d72d61b369e4652",
+        "name": "PRIMA",
+        "func": "var originalPayload = msg.payload;\nvar newPayload = {};\nnewPayload.label = originalPayload;\nmsg.payload = newPayload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 300,
+        "wires": [
+            [
+                "11202c44b13beaef"
+            ]
+        ]
+    },
+    {
+        "id": "6be86aba5277ac56",
+        "type": "file in",
+        "z": "3068aa4de844c529",
+        "name": "Predicted Labels Classifier #1",
+        "filename": "/Users/massimilianoarca/Documents/5th Year/2nd Semester/Internet Of Things/Project/IoT-WI-project/pred_labels_class1.csv",
+        "format": "lines",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": true,
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "dc1c84a46e5f1de3"
+            ]
+        ]
+    },
+    {
+        "id": "733eccdc698ca588",
+        "type": "file in",
+        "z": "3068aa4de844c529",
+        "name": "Expected Labels",
+        "filename": "/Users/massimilianoarca/Documents/5th Year/2nd Semester/Internet Of Things/Project/IoT-WI-project/expected_labels.csv",
+        "format": "lines",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": true,
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "2a877463e9db4843"
+            ]
+        ]
+    },
+    {
+        "id": "2a877463e9db4843",
+        "type": "csv",
+        "z": "3068aa4de844c529",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "45c923fd1e770834"
+            ]
+        ]
+    },
+    {
+        "id": "dc1c84a46e5f1de3",
+        "type": "csv",
+        "z": "3068aa4de844c529",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 630,
+        "y": 380,
+        "wires": [
+            [
+                "d578a227fb240648"
+            ]
+        ]
+    },
+    {
+        "id": "145b0291b98bd4a3",
+        "type": "inject",
+        "z": "3068aa4de844c529",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 80,
+        "y": 340,
+        "wires": [
+            [
+                "733eccdc698ca588",
+                "6be86aba5277ac56"
+            ]
+        ]
+    },
+    {
+        "id": "45c923fd1e770834",
+        "type": "function",
+        "z": "3068aa4de844c529",
+        "name": "",
+        "func": "msg.payload = msg.payload.label;\nmsg.topic = 'Expected';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 280,
+        "wires": [
+            [
+                "0f9a9e4e6f89a1ff"
+            ]
+        ]
+    },
+    {
+        "id": "d578a227fb240648",
+        "type": "function",
+        "z": "3068aa4de844c529",
+        "name": "",
+        "func": "msg.payload = msg.payload.label;\n\n\nif(msg.payload == 1) {\n    msg.payload = 1.1;\n} else{\n    msg.payload = 0.1;\n}\n\nmsg.topic = 'Predicted';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 380,
+        "wires": [
+            [
+                "c3c7825fdcfd4e99"
+            ]
+        ]
+    },
+    {
+        "id": "0f9a9e4e6f89a1ff",
+        "type": "delay",
+        "z": "3068aa4de844c529",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 950,
+        "y": 280,
+        "wires": [
+            [
+                "5bcaf8e1903a487c"
+            ]
+        ]
+    },
+    {
+        "id": "c3c7825fdcfd4e99",
+        "type": "delay",
+        "z": "3068aa4de844c529",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 950,
+        "y": 380,
+        "wires": [
+            [
+                "5bcaf8e1903a487c"
+            ]
+        ]
+    },
+    {
+        "id": "5bcaf8e1903a487c",
+        "type": "ui_chart",
+        "z": "3068aa4de844c529",
+        "name": "",
+        "group": "2c8fbdad8bef74e1",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Label Evaluation",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "mm:ss",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ed3102",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1240,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "36813b70531ea818",
+        "type": "inject",
+        "z": "3068aa4de844c529",
+        "name": "Clean Chart",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 950,
+        "y": 500,
+        "wires": [
+            [
+                "5bcaf8e1903a487c"
+            ]
+        ]
+    }
+]
